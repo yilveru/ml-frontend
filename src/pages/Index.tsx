@@ -61,8 +61,8 @@ const LoginPage = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <button onClick={() => setShowModal(true)}>Registrarse</button>
         <button onClick={() => setShowLoginModal(true)}>Login</button>
+        <button onClick={() => setShowModal(true)}>Registrarse</button>
         {showModal && <RegisterModal onClose={() => setShowModal(false)} />}
         {loginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
       </div>
