@@ -14,6 +14,7 @@ interface Product {
 }
 
 const HomePage = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [products, setProducts] = useState<Product[]>([]);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
@@ -32,7 +33,7 @@ const HomePage = () => {
 
     if (page) queryParams.append('page', page.toString());
     if (limit) queryParams.append('limit', limit.toString());
-    const response = await fetch(`http://localhost:3000/products/user?${queryParams.toString()}`, {
+    const response = await fetch(`${API_URL}/products/user?${queryParams.toString()}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

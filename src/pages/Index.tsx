@@ -5,6 +5,7 @@ import ProductTable from '../components/ProductTable';
 import Pagination from '../components/Pagination';
 
 const LoginPage = () => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [showModal, setShowModal] = useState(false);
   const [loginModal, setShowLoginModal] = useState(false);
 
@@ -31,7 +32,7 @@ const LoginPage = () => {
     if (limit) queryParams.append('limit', limit.toString());
 
     try {
-      const response = await fetch(`http://localhost:3000/products/list?${queryParams.toString()}`);
+      const response = await fetch(`${API_URL}/products/list?${queryParams.toString()}`);
       const data = await response.json();
       setProducts(data.products);
       setTotal(data.total);

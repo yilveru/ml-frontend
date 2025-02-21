@@ -6,6 +6,7 @@ interface Props {
 }
 
 const ProductCreateModal: React.FC<Props> = ({ onClose, onProductCreated  }) => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [name, setName] = useState('');
   const [sku, setSku] = useState('');
   const [quantity, setQuantity] = useState('');
@@ -17,7 +18,7 @@ const ProductCreateModal: React.FC<Props> = ({ onClose, onProductCreated  }) => 
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/products/create', {
+      const response = await fetch(`${API_URL}/products/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', 

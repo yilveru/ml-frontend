@@ -5,6 +5,7 @@ interface Props {
 }
 
 const RegisterModal: React.FC<Props> = ({ onClose }) => {
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -21,7 +22,7 @@ const RegisterModal: React.FC<Props> = ({ onClose }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/users/register', {
+      const response = await fetch(`${API_URL}/users/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, confirmPassword }),
