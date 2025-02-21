@@ -78,5 +78,5 @@ El servidor se levantará en `http://localhost:5173`
 La app quedará disponible en 
 
 ```
-https://yilveru.github.io/ml-frontend`
+https://yilveru.github.io/ml-frontend
 ```
