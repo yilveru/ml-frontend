@@ -4,7 +4,7 @@ import IndexPage from './pages/Index';
 
 const AppRouter = () => {
   return (
-    <Router>
+    <Router basename="/ml-frontend">
       <Routes>
         <Route path="/" element={<IndexPage />} />
         <Route path="/home" element={<HomePage />} />

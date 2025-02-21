@@ -75,4 +75,8 @@ El servidor se levantará en `http://localhost:5173`
    npm run deploy
    ```
 
-La app quedará disponible en `https://yilveru.github.io/ml-frontend`.
+La app quedará disponible en 
+
+```
+https://yilveru.github.io/ml-frontend`
+```
